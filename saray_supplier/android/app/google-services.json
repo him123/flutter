@@ -1,0 +1,106 @@
+{
+  "project_info": {
+    "project_number": "129904489537",
+    "firebase_url": "https://uberc-6b0f0.firebaseio.com",
+    "project_id": "uberc-6b0f0",
+    "storage_bucket": "uberc-6b0f0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:129904489537:android:89f2adf29da4725b2e42c0",
+        "android_client_info": {
+          "package_name": "com.him.mlkitdemo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "129904489537-vm50556l2ggt6ufevd0bgq3jd46iqlaf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRi6FmqWrXuuL_KVUK49X7F8ilg45789Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "129904489537-vm50556l2ggt6ufevd0bgq3jd46iqlaf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:129904489537:android:38f248fbffb510a32e42c0",
+        "android_client_info": {
+          "package_name": "com.him.saray_supplier"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "129904489537-vm50556l2ggt6ufevd0bgq3jd46iqlaf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRi6FmqWrXuuL_KVUK49X7F8ilg45789Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "129904489537-vm50556l2ggt6ufevd0bgq3jd46iqlaf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:129904489537:android:be8ad6e0f70d9bab2e42c0",
+        "android_client_info": {
+          "package_name": "com.him.uberclone.riderapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "129904489537-8luqucs4dk9uv2bpn6qkn91jcpqtvhvr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.him.uberclone.riderapp",
+            "certificate_hash": "0d9575ec7ae8f7d3dbd690365c74772b99bcd409"
+          }
+        },
+        {
+          "client_id": "129904489537-vm50556l2ggt6ufevd0bgq3jd46iqlaf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRi6FmqWrXuuL_KVUK49X7F8ilg45789Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "129904489537-vm50556l2ggt6ufevd0bgq3jd46iqlaf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
