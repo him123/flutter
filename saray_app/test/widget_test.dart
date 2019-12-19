@@ -12,6 +12,7 @@ import 'package:saray_app/main.dart';
 import 'package:saray_app/screens/login_screen.dart';
 
 void main() {
+  TestWidgetsFlutterBinding.ensureInitialized();
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
     await tester.pumpWidget(LoginScreen());

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_lifecycle_state/flutter_lifecycle_state.dart';
+//import 'package:flutter_lifecycle_state/flutter_lifecycle_state.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
 import 'package:saray_app/constants/constants.dart';
 import 'package:http/http.dart' as http;
@@ -19,7 +19,7 @@ class OrdersScreen extends StatefulWidget {
   _OrdersScreenState createState() => _OrdersScreenState(custId: custId);
 }
 
-class _OrdersScreenState extends StateWithLifecycle<OrdersScreen> {
+class _OrdersScreenState extends State<OrdersScreen> {
 
   final String custId;
 
@@ -31,11 +31,11 @@ class _OrdersScreenState extends StateWithLifecycle<OrdersScreen> {
 
 
   @override
-  void onResume() {
-    // TODO: implement onResume
-    super.onResume();
-    getOrdersByCustId(custId);
-  }
+//  void onResume() {
+//    // TODO: implement onResume
+//    super.onResume();
+//    getOrdersByCustId(custId);
+//  }
 
   @override
   void initState() {
@@ -43,7 +43,7 @@ class _OrdersScreenState extends StateWithLifecycle<OrdersScreen> {
     super.initState();
     showSpinner = true;
 
-
+    getOrdersByCustId(custId);
   }
 
   @override
@@ -81,7 +81,7 @@ class _OrdersScreenState extends StateWithLifecycle<OrdersScreen> {
   }
 
   Future<String> getOrdersByCustId(String id) async {
-    print('========= getData called For Items===========$id');
+    print('========= Order lists ===========$id');
     var response = await http.get(
         '$BASEURL/api/customer.php?method=customer_order_list&user_id=$id');
 

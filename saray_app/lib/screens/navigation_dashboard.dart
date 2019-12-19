@@ -1,6 +1,6 @@
-import 'package:firebase_messaging/firebase_messaging.dart';
+//import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_lifecycle_state/flutter_lifecycle_state.dart';
+//import 'package:flutter_lifecycle_state/flutter_lifecycle_state.dart';
 import 'package:provider/provider.dart';
 import 'package:saray_app/constants/constants.dart';
 import 'package:saray_app/providers/cart.dart';
@@ -41,7 +41,7 @@ class NavigationDashboard extends StatefulWidget {
       id: custId);
 }
 
-class _NavigationDashboardState extends StateWithLifecycle<NavigationDashboard> {
+class _NavigationDashboardState extends State<NavigationDashboard> {
   final String name;
   final String phone;
   final String email;
@@ -62,21 +62,21 @@ class _NavigationDashboardState extends StateWithLifecycle<NavigationDashboard> 
   int _selectedPageIndex = 0;
 
 
-  @override
-  void onResume() {
-    // TODO: implement onResume
-    super.onResume();
-    getCartCount();
-  }
+//  @override
+//  void onResume() {
+//    // TODO: implement onResume
+//    super.onResume();
+//    getCartCount();
+//  }
   @override
   void initState() {
 
-
-    FirebaseMessaging firebaseMessaging = FirebaseMessaging();
-    firebaseMessaging.getToken().then((token){
-      print(token);
-
-    });
+    getCartCount();
+//    FirebaseMessaging firebaseMessaging = FirebaseMessaging();
+//    firebaseMessaging.getToken().then((token){
+//      print(token);
+//
+//    });
     _pages = [
       {
         'page': ShopScreen(

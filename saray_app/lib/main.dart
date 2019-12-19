@@ -1,7 +1,8 @@
 import 'dart:ui' as prefix0;
 
 import 'package:flutter/material.dart';
-import 'package:flutter_lifecycle_state/flutter_lifecycle_state.dart';
+//import 'package:flutter_lifecycle_state/flutter_lifecycle_state.dart';
+//import 'package:flutter_lifecycle_state/flutter_lifecycle_state.dart';
 import 'package:provider/provider.dart';
 import 'package:saray_app/providers/cart.dart';
 import 'package:saray_app/screens/about_us.dart';
@@ -24,6 +25,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 //AuthService appAuth = new AuthService();
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
   SharedPreferences prefs = await SharedPreferences.getInstance();
 
   String login = prefs.getString('login');
@@ -56,6 +59,8 @@ void main() async {
     _defaultHome = new LoginScreen();
   }
 
+
+
   runApp(
       MultiProvider(
     providers: [
@@ -64,7 +69,7 @@ void main() async {
       ),
     ],
     child: MaterialApp(
-      navigatorObservers: [routeObserver],
+//      navigatorObservers: [routeObserver],
       theme: ThemeData(
         primaryColor: Color(0xFFD4AF37),
         accentColor: Color(0xFF800000),

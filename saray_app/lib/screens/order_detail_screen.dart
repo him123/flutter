@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-import 'package:braintree_payment/braintree_payment.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:modal_progress_hud/modal_progress_hud.dart';
@@ -227,52 +226,52 @@ class _OrderDetailScreenState extends State<OrderDetailScreen> {
     }
   }
 
-  payNow() async {
-    print('pay now method');
-//    String clientNonce = "eyJ2ZXJzaW9uIjoyLCJhdXRob3JpemF0aW9uRmluZ2VycHJpbnQiOiJleUowZVhBaU9pSktWMVFpTENKaGJHY2lPaUpGVXpJMU5pSXNJbXRwWkNJNklqSXdNVGd3TkRJMk1UWXRjMkZ1WkdKdmVDSXNJbWx6Y3lJNklrRjFkR2g1SW4wLmV5SmxlSEFpT2pFMU56WXhOakUyT1Rjc0ltcDBhU0k2SWpsaFlURTJZbVJrTFRsbU9XRXRORE5rTnkwNU5qSXpMVGN4WkRkaE5UQTBNak0zTWlJc0luTjFZaUk2SWpWemJYSmtlbUkwY25sbU5qWnVjek1pTENKcGMzTWlPaUpCZFhSb2VTSXNJbTFsY21Ob1lXNTBJanA3SW5CMVlteHBZMTlwWkNJNklqVnpiWEprZW1JMGNubG1Oalp1Y3pNaUxDSjJaWEpwWm5sZlkyRnlaRjlpZVY5a1pXWmhkV3gwSWpwbVlXeHpaWDBzSW5KcFoyaDBjeUk2V3lKdFlXNWhaMlZmZG1GMWJIUWlYU3dpYjNCMGFXOXVjeUk2ZTMxOS5XSEdSYUJ1MGRoYzYyVDBKZnFwVVZOblFfWkRCSkFhUy1FNmpUZGFHNHA4V0lmZk81TnBZcnEtODRXY3Q2Q2daS25xX2ZfcFhreDZRRGRHTllPZUZqZyIsImNvbmZpZ1VybCI6Imh0dHBzOi8vYXBpLnNhbmRib3guYnJhaW50cmVlZ2F0ZXdheS5jb206NDQzL21lcmNoYW50cy81c21yZHpiNHJ5ZjY2bnMzL2NsaWVudF9hcGkvdjEvY29uZmlndXJhdGlvbiIsImdyYXBoUUwiOnsidXJsIjoiaHR0cHM6Ly9wYXltZW50cy5zYW5kYm94LmJyYWludHJlZS1hcGkuY29tL2dyYXBocWwiLCJkYXRlIjoiMjAxOC0wNS0wOCJ9LCJjaGFsbGVuZ2VzIjpbXSwiZW52aXJvbm1lbnQiOiJzYW5kYm94Iiw";
-
-    BraintreePayment braintreePayment = new BraintreePayment();
-    dynamic data = await braintreePayment.showDropIn(
-        nonce: clientNounce,
-        amount: "2.0",
-        enableGooglePay: true,
-        inSandbox: true);
-    print("Response of the payment ${data}");
-    dynamic nounce = json.encode(data);
-    print("Response of the payment ${nounce}");
-
-    String nounceFromServer = json.decode(nounce)['paymentNonce'];
-    print('this is nounce fomr server$nounceFromServer');
-
-    pr.style(
-        message: 'processing payment...',
-        borderRadius: 10.0,
-        backgroundColor: Colors.white,
-        progressWidget: CircularProgressIndicator(),
-        elevation: 10.0,
-        insetAnimCurve: Curves.easeInOut,
-        progress: 0.0,
-        maxProgress: 100.0,
-        progressTextStyle: TextStyle(
-            color: Colors.black, fontSize: 13.0, fontWeight: FontWeight.w400),
-        messageTextStyle: TextStyle(
-            color: Colors.black, fontSize: 19.0, fontWeight: FontWeight.w600));
-    setState(() {
-      pr.show();
-    });
-
-    sendPaymentNonceToServer(
-        paymentNonce: nounceFromServer,
-        countryCodeAlpha2: 'IN',
-        currency_type: "USD",
-        extendedAddress: 'Ahmedabad',
-        firstname: 'Himanshu',
-        lastname: 'Dhakecha',
-        locality: 'Indian',
-        postalCode: '380015',
-        region: 'India',
-        streeAddress: 'Smarana App');
-  }
+//  payNow() async {
+//    print('pay now method');
+////    String clientNonce = "eyJ2ZXJzaW9uIjoyLCJhdXRob3JpemF0aW9uRmluZ2VycHJpbnQiOiJleUowZVhBaU9pSktWMVFpTENKaGJHY2lPaUpGVXpJMU5pSXNJbXRwWkNJNklqSXdNVGd3TkRJMk1UWXRjMkZ1WkdKdmVDSXNJbWx6Y3lJNklrRjFkR2g1SW4wLmV5SmxlSEFpT2pFMU56WXhOakUyT1Rjc0ltcDBhU0k2SWpsaFlURTJZbVJrTFRsbU9XRXRORE5rTnkwNU5qSXpMVGN4WkRkaE5UQTBNak0zTWlJc0luTjFZaUk2SWpWemJYSmtlbUkwY25sbU5qWnVjek1pTENKcGMzTWlPaUpCZFhSb2VTSXNJbTFsY21Ob1lXNTBJanA3SW5CMVlteHBZMTlwWkNJNklqVnpiWEprZW1JMGNubG1Oalp1Y3pNaUxDSjJaWEpwWm5sZlkyRnlaRjlpZVY5a1pXWmhkV3gwSWpwbVlXeHpaWDBzSW5KcFoyaDBjeUk2V3lKdFlXNWhaMlZmZG1GMWJIUWlYU3dpYjNCMGFXOXVjeUk2ZTMxOS5XSEdSYUJ1MGRoYzYyVDBKZnFwVVZOblFfWkRCSkFhUy1FNmpUZGFHNHA4V0lmZk81TnBZcnEtODRXY3Q2Q2daS25xX2ZfcFhreDZRRGRHTllPZUZqZyIsImNvbmZpZ1VybCI6Imh0dHBzOi8vYXBpLnNhbmRib3guYnJhaW50cmVlZ2F0ZXdheS5jb206NDQzL21lcmNoYW50cy81c21yZHpiNHJ5ZjY2bnMzL2NsaWVudF9hcGkvdjEvY29uZmlndXJhdGlvbiIsImdyYXBoUUwiOnsidXJsIjoiaHR0cHM6Ly9wYXltZW50cy5zYW5kYm94LmJyYWludHJlZS1hcGkuY29tL2dyYXBocWwiLCJkYXRlIjoiMjAxOC0wNS0wOCJ9LCJjaGFsbGVuZ2VzIjpbXSwiZW52aXJvbm1lbnQiOiJzYW5kYm94Iiw";
+//
+//    BraintreePayment braintreePayment = new BraintreePayment();
+//    dynamic data = await braintreePayment.showDropIn(
+//        nonce: clientNounce,
+//        amount: "2.0",
+//        enableGooglePay: true,
+//        inSandbox: true);
+//    print("Response of the payment ${data}");
+//    dynamic nounce = json.encode(data);
+//    print("Response of the payment ${nounce}");
+//
+//    String nounceFromServer = json.decode(nounce)['paymentNonce'];
+//    print('this is nounce fomr server$nounceFromServer');
+//
+//    pr.style(
+//        message: 'processing payment...',
+//        borderRadius: 10.0,
+//        backgroundColor: Colors.white,
+//        progressWidget: CircularProgressIndicator(),
+//        elevation: 10.0,
+//        insetAnimCurve: Curves.easeInOut,
+//        progress: 0.0,
+//        maxProgress: 100.0,
+//        progressTextStyle: TextStyle(
+//            color: Colors.black, fontSize: 13.0, fontWeight: FontWeight.w400),
+//        messageTextStyle: TextStyle(
+//            color: Colors.black, fontSize: 19.0, fontWeight: FontWeight.w600));
+//    setState(() {
+//      pr.show();
+//    });
+//
+//    sendPaymentNonceToServer(
+//        paymentNonce: nounceFromServer,
+//        countryCodeAlpha2: 'IN',
+//        currency_type: "USD",
+//        extendedAddress: 'Ahmedabad',
+//        firstname: 'Himanshu',
+//        lastname: 'Dhakecha',
+//        locality: 'Indian',
+//        postalCode: '380015',
+//        region: 'India',
+//        streeAddress: 'Smarana App');
+//  }
 
   void sendPaymentNonceToServer(
       {String paymentNonce,

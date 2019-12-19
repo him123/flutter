@@ -5,7 +5,6 @@ import 'package:saray_app/model/meal.dart';
 import 'package:saray_app/screens/material_list_screen.dart';
 import 'package:saray_app/screens/shope_screen.dart';
 import 'package:saray_app/widget/mat_cat.dart';
-import 'package:saray_app/widget/mat_item.dart';
 import 'package:saray_app/widget/shop_wdget.dart';
 
 import '../dummy_data.dart';

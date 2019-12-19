@@ -129,32 +129,37 @@ class MatItem extends StatelessWidget {
                     height: 10.0,
                   ),
                   Row(
+                    crossAxisAlignment: CrossAxisAlignment.end,
                     children: <Widget>[
                       Text(
                         'Price',
                         style: TextStyle(fontSize: 20.0),
                       ),
-                      Icon(
-                        Icons.attach_money,
-                        size: 20.0,
-                      ),
+                      SizedBox(width: 5.0,),
                       Text(
                         price,
-                        style: TextStyle(fontSize: 20.0, fontFamily: 'Proxinova', fontWeight: FontWeight.bold),
+                        style: TextStyle(fontSize: 20.0,  fontWeight: FontWeight.bold),
                       ),
+
                       SizedBox(
                         width: 5.0,
                       ),
-                      Text(
-                        'Per',
-                        style: TextStyle(fontSize: 20.0),
+                      Center(child: Text('BHD', style: TextStyle(fontSize: 16.0),)),
+                      SizedBox(
+                        width: 5.0,
+                      ),
+                      Center(
+                        child: Text(
+                          'per',
+                          style: TextStyle(fontSize: 20.0),
+                        ),
                       ),
                       SizedBox(
                         width: 5.0,
                       ),
                       Text(
                         unit,
-                        style: TextStyle(fontSize: 20.0, fontFamily: 'Proxinova', fontWeight: FontWeight.bold),
+                        style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
                       ),
                     ],
                   ),
